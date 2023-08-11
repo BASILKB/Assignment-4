@@ -54,7 +54,7 @@ app.post('/views/receipt', async (req, res) => {
       const shippingCost = 20;
       total += shippingCost;
 
-       // tax based on province 
+       // tax based on provinces
        const province = formData.province;
        let taxRate = 0;
        switch (province) {
