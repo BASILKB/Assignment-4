@@ -1,0 +1,113 @@
+<!-- BASIL KOCHERI BIJU
+STUDENT NUMBER- 8885276 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Store</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="container"></div>
+  <h1>The Fruit Basket</h1>
+  <form action="/views/receipt" method="post">
+    <div class="form-group">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" name="customerName" required><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+    </div>
+
+    <div class="form-group">
+      <label for="postCode">Post Code:</label>
+      <input type="text" id="postCode" name="postCode" required>
+    </div>
+
+    <div class="form-group">
+      <label for="province">Province:</label>
+      <select id="province" name="province">
+        <option value="Alberta">Alberta</option>
+        <option value="British Columbia">British Columbia</option>
+        <option value="Manitoba">Manitoba</option>
+        <option value="New Brunswick">New Brunswick</option>
+        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+        <option value="Northwest Territories">Northwest Territories</option>
+        <option value="Nova Scotia">Nova Scotia</option>
+        <option value="Nunavut">Nunavut</option>
+        <option value="Ontario">Ontario</option>
+        <option value="Prince Edward Island">Prince Edward Island</option>
+        <option value="Quebec">Quebec</option>
+        <option value="Saskatchewan">Saskatchewan</option>
+        <option value="Yukon">Yukon</option>
+      </select>
+    </div>
+
+ 
+    <h2>Products:</h2>
+    <div class="product-group">
+      <div class="product">
+        <label for="products[0][name]">Product:</label>
+        <select name="products[0][name]">
+          <option value="Mango">Mango</option>
+          <option value="Apple">Apple</option>
+          <option value="Banana">Banana</option>
+        </select>
+        <input type="number" name="products[0][quantity]" placeholder="Quantity">
+        <span class="product-price"><span class="price"></span></span>
+      </div>
+      <div class="product">
+        <label for="products[1][name]">Product:</label>
+        <select name="products[1][name]">
+          <option value="Mango">Mango</option>
+          <option value="Apple">Apple</option>
+          <option value="Banana">Banana</option>
+        </select>
+        <input type="number" name="products[1][quantity]" placeholder="Quantity">
+        <span class="product-price"><span class="price"></span></span>
+      </div>
+      <div class="product">
+        <label for="products[2][name]">Product:</label>
+        <select name="products[2][name]">
+          <option value="Mango">Mango</option>
+          <option value="Apple">Apple</option>
+          <option value="Banana">Banana</option>
+        </select>
+        <input type="number" name="products[2][quantity]" placeholder="Quantity">
+        <span class="product-price"><span class="price"></span></span>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="deliveryTime">Delivery Time:</label>
+      <select id="deliveryTime" name="deliveryTime">
+        <option value="3 days">3 Days</option>
+        <option value="1 week">1 Week</option>
+        <option value="2 weeks">2 Weeks</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="button" type="submit">Place Order</button>
+    </div>
+  </form>
+</body>
+</html>

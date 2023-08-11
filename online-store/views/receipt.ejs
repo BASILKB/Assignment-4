@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receipt</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for your purchase, <%= receipt.customerName %>!</h1>
+        
+        <h2>Order Details:</h2>
+        <p><strong>Email:</strong> <%= receipt.email %></p>
+        <p><strong>Phone:</strong> <%= receipt.phone %></p>
+        <p><strong>Address:</strong> <%= receipt.address %>, <%= receipt.city %>, <%= receipt.province %>, <%= receipt.postCode %></p>
+        
+        <h2>Products:</h2>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price per Item</th>
+                <th>Total Price</th>
+            </tr>
+            <% receipt.products.forEach(product => { %>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td><%= product.quantity %></td>
+                    <td>$10.00</td> 
+                    <td>$<%= (product.quantity * 10).toFixed(2) %></td> 
+                </tr>
+            <% }); %>
+            <tr>
+                <td colspan="3"><strong>Shipping Cost:</strong></td>
+                <td>$<%= receipt.shippingCost.toFixed(2) %></td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Tax:</strong></td>
+                <td>$<%= receipt.tax.toFixed(2) %></td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Total:</strong></td>
+                <td>$<%= receipt.total.toFixed(2) %></td>
+            </tr>
+        </table>
+              
+        <p><strong>Delivery Time:</strong> <%= receipt.deliveryTime %></p>  
+        <p><strong>Timestamp:</strong> <%= receipt.timestamp %></p>
+    </div>
+</body>
+</html>
