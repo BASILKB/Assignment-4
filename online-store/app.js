@@ -101,9 +101,10 @@ app.post('/views/receipt', async (req, res) => {
                taxRate = 0;
        }
        
-
+    // Calculating Tax and Updating Total Price
     const tax = total * taxRate;
     total += tax;
+
 
     const receipt = new Receipt({
         customerName: formData.customerName,
